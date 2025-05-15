@@ -8,6 +8,7 @@ export const signup=async(req,res)=>{
         if(user){
             return res.status(400).json({message:"user already exist"})
         }
+        
         const hashPassword= await bcryptjs.hash(password,10);
         const createdUser=new User({
             fullname:fullname,
